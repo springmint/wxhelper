@@ -1,20 +1,36 @@
 
 import requests
 import json
+import hashlib
+import calendar
+import time
 import os
+
+
+def get_au(md5_raw_str):
+    md5 = hashlib.md5()
+    md5.update(md5_raw_str)
+    return md5.hexdigest()
 
 
 def get_news():
     url = "http://sailor.kfcex.com/api/api/v1/cpbox/cpNews/last"
+    current_gmt = time.gmtime()
+    time_stamp = calendar.timegm(current_gmt)
+
+    au = get_au(("WePlatformCRh5cf#Dg5Q4qw@Z7FtxwDWH" +
+                str(time_stamp)).encode('utf-8'))
     payload = json.dumps({
-        "Au": "dc98570879290a71d975b0d4baf75a03",
+        "Au": au,
         "Platform": "WePlatform",
-        "Timestamp": 0
+        "Timestamp": time_stamp
     })
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
-    # print(response.text)
+    print(response.text)
     res = json.loads(response.text)
+    if res["code"] != 0:
+        return []
     filename = "maxid.data"
     maxid = 0
     rstlist = []
@@ -41,3 +57,5 @@ def get_news():
 
 if __name__ == '__main__':
     get_news()
+
+# get_news()
