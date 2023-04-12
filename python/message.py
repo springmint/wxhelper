@@ -34,6 +34,10 @@ def get_news():
     filename = "maxid.data"
     maxid = 0
     rstlist = []
+    if os.path.isfile(filename) == False:
+        with open(filename, "w") as fff:
+            fff.write("\n")
+            fff.close()
     with open(filename, "r+") as ff:
         s = ff.readline()
         if str.strip(s) != "":
@@ -46,17 +50,12 @@ def get_news():
                 if element["id"] > newmaxid:
                     newmaxid = element["id"]
 
-            # print(res['data']["list"].items())
-            # if res['code'] == 0:
-            # return res['data']["list"].items()
-            # return res['code']
-
         ff.close()
     if newmaxid > maxid:
-            with open(filename, "w+") as ff:
-                ff.write('%d\n' % (newmaxid))
-                ff.close()
-    
+        with open(filename, "w+") as ff:
+            ff.write('%d\n' % (newmaxid))
+            ff.close()
+
     return rstlist
 
 
