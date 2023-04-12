@@ -603,10 +603,10 @@ def run_all_time():
         # else:
         rst_list = get_news()
         for el in rst_list:
-            send_contxt = "【标题】:" + el["title"] + "\n" + "【内容】: " + el["message"] + \
-                "\n" + "------------------------------------\n【发布时间】:" + \
+            send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                "\n" + "------------------------------------\n【发布时间】" + \
                 el["publishedAt"] + \
-                "\n【备注】: CryptoBox是一家致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     #官网：即将上线"
+                "\n【备注】CryptoBox致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
             # print(send_contxt)
             send_text(send_contxt)
 
