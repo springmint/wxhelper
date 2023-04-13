@@ -42,6 +42,10 @@ def on_message(wsapp, message):
 
 def on_close(wsapp, cstatus, cmessage):
     print(wsapp, cstatus, cmessage)
+    print("断线重连")
+    ws = websocket.WebSocketApp(
+        wsurl, on_message=on_message, on_close=on_close, on_error=on_error, on_open=on_open, on_ping=on_ping)
+    ws.run_forever(ping_interval=30)
 
 
 def on_error(wsapp, e):
