@@ -592,6 +592,23 @@ def get_member_info():
     print(response.text)
 
 
+def send_cpbox_news(news_list):
+    try:
+        print("begin")
+        check_login()
+    except requests.exceptions.ConnectionError:
+        print("something error!\n")
+        # 记录在列表里面，相近的时间可以发送
+    else:
+        for el in news_list:
+            send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                "\n" + "------------------------------------\n【发布时间】" + \
+                el["publishedAt"] + \
+                "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+            # print(send_contxt)
+            send_text(send_contxt)
+
+
 def run_all_time():
     while 1:
         randoma = random.randint(300, 600)
@@ -604,17 +621,17 @@ def run_all_time():
         else:
             rst_list = []
             rst_list = get_news()
-        for el in rst_list:
-            send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
-                "\n" + "------------------------------------\n【发布时间】" + \
-                el["publishedAt"] + \
-                "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
-            # print(send_contxt)
-            send_text(send_contxt)
+            for el in rst_list:
+                send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                    "\n" + "------------------------------------\n【发布时间】" + \
+                    el["publishedAt"] + \
+                    "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+                # print(send_contxt)
+                send_text(send_contxt)
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
     # user_info()
     # send_text()
-    run_all_time()
+    # run_all_time()
