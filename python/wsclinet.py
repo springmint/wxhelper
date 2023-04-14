@@ -1,8 +1,10 @@
 import websocket
 import json
 import os
+import time
+import threading
 from client import send_cpbox_news
-wsurl = "ws://localhost:8808/ws"
+wsurl = "ws://sailor.kfcex.com/ws"
 
 
 def send_message(txt):
@@ -40,9 +42,20 @@ def on_message(wsapp, message):
         send_cpbox_news(rstlist)
 
 
-def on_close(wsapp, cstatus, cmessage):
-    print(wsapp, cstatus, cmessage)
+def action():
     print("断线重连")
+    time.sleep(5)
+    ws = websocket.WebSocketApp(
+        wsurl, on_message=on_message, on_close=on_close, on_error=on_error, on_open=on_open, on_ping=on_ping)
+    ws.run_forever(ping_interval=30)
+
+
+def on_close(wsapp, cstatus, cmessage):
+    # thread = threading.Thread(action)
+    # thread.start()
+    # print(wsapp, cstatus, cmessage)
+    print("断线重连")
+    time.sleep(5)
     ws = websocket.WebSocketApp(
         wsurl, on_message=on_message, on_close=on_close, on_error=on_error, on_open=on_open, on_ping=on_ping)
     ws.run_forever(ping_interval=30)
@@ -72,3 +85,5 @@ def start_websocket_client():
 
 if __name__ == '__main__':
     start_websocket_client()
+    # while (True):
+    #     time.sleep(1000)
