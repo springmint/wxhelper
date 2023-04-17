@@ -593,6 +593,7 @@ def get_member_info():
 
 
 def send_cpbox_news(news_list):
+    slogan = "【Crypto Box】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n # 公众号:CryptoBox     官网：即将上线"
     try:
         print("begin")
         check_login()
@@ -605,15 +606,15 @@ def send_cpbox_news(news_list):
                 send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
                     "\n" + "------------------------------------\n【发布时间】" + \
                     el["publishedAt"] + \
-                    "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+                    "\n" + slogan
                 # print(send_contxt)
                 send_text("38979139441@chatroom", send_contxt)  # 测试群
                 send_text("48491358084@chatroom", send_contxt)
             elif el["type"] == 2:
-                send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                send_contxt = "类型】: 币安公告【内容】" + el["title"] + "\n" + "【链接】" + el["news_url"] + \
                     "\n" + "------------------------------------\n【发布时间】" + \
                     el["publishedAt"] + \
-                    "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+                    "\n" + slogan
                 send_text("38979139441@chatroom", send_contxt)  # 测试群
 
 
