@@ -29,7 +29,7 @@ def user_info():
     print(response.text)
 
 
-def send_text(wxid,txt):
+def send_text(wxid, txt):
     """
     发送文本filehelper
     :return:
@@ -601,13 +601,20 @@ def send_cpbox_news(news_list):
         # 记录在列表里面，相近的时间可以发送
     else:
         for el in news_list:
-            send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
-                "\n" + "------------------------------------\n【发布时间】" + \
-                el["publishedAt"] + \
-                "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
-            # print(send_contxt)
-            send_text("38979139441@chatroom",send_contxt)
-            send_text("48491358084@chatroom",send_contxt)
+            if el["type"] == 1:
+                send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                    "\n" + "------------------------------------\n【发布时间】" + \
+                    el["publishedAt"] + \
+                    "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+                # print(send_contxt)
+                send_text("38979139441@chatroom", send_contxt)  # 测试群
+                send_text("48491358084@chatroom", send_contxt)
+            elif el["type"] == 2:
+                send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                    "\n" + "------------------------------------\n【发布时间】" + \
+                    el["publishedAt"] + \
+                    "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+                send_text("38979139441@chatroom", send_contxt)  # 测试群
 
 
 def run_all_time():
@@ -628,13 +635,13 @@ def run_all_time():
                 el["publishedAt"] + \
                 "\n【CryptoBox】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
             # print(send_contxt)
-            send_text("38979139441@chatroom",send_contxt)
-            send_text("48491358084@chatroom",send_contxt)
+            send_text("38979139441@chatroom", send_contxt)
+            send_text("48491358084@chatroom", send_contxt)
 
 
-#if __name__ == '__main__':
-    #hook_msg()
-    #unhook_msg()
+# if __name__ == '__main__':
+    # hook_msg()
+    # unhook_msg()
     # user_info()
     # send_text()
     # run_all_time()
