@@ -29,14 +29,14 @@ def user_info():
     print(response.text)
 
 
-def send_text(txt):
+def send_text(wxid,txt):
     """
-    发送文本
+    发送文本filehelper
     :return:
     """
     url = "http://127.0.0.1:19188/api/?type=2"
     payload = json.dumps({
-        "wxid": "filehelper",
+        "wxid": wxid,
         "msg": txt
     })
     headers = {
@@ -71,8 +71,8 @@ def send_img():
     """
     url = "http://127.0.0.1:19188/api/?type=5"
     payload = json.dumps({
-        "wxid": "filehelper",
-        "imagePath": "C:/123.png"
+        "wxid": "38979139441@chatroom",
+        "imagePath": "C:/123.jpeg"
     })
     headers = {
         'Content-Type': 'application/json'
@@ -606,7 +606,8 @@ def send_cpbox_news(news_list):
                 el["publishedAt"] + \
                 "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
             # print(send_contxt)
-            send_text(send_contxt)
+            send_text("38979139441@chatroom",send_contxt)
+            send_text("48491358084@chatroom",send_contxt)
 
 
 def run_all_time():
@@ -621,17 +622,19 @@ def run_all_time():
         else:
             rst_list = []
             rst_list = get_news()
-            for el in rst_list:
-                send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
-                    "\n" + "------------------------------------\n【发布时间】" + \
-                    el["publishedAt"] + \
-                    "\n【备注】Crypto Box致力于成为最专业的区块链投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
-                # print(send_contxt)
-                send_text(send_contxt)
+        for el in rst_list:
+            send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                "\n" + "------------------------------------\n【发布时间】" + \
+                el["publishedAt"] + \
+                "\n【CryptoBox】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+            # print(send_contxt)
+            send_text("38979139441@chatroom",send_contxt)
+            send_text("48491358084@chatroom",send_contxt)
 
 
-# if __name__ == '__main__':
-
+#if __name__ == '__main__':
+    #hook_msg()
+    #unhook_msg()
     # user_info()
     # send_text()
     # run_all_time()
