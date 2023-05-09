@@ -593,7 +593,7 @@ def get_member_info():
 
 
 def send_cpbox_news(news_list):
-    slogan = "【Crypto Box】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n #公众号:CryptoBox     加群主微信：防止失联"
+    slogan = "【Crypto Box】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！获取所有功能，查看官网www.cpbox.io\n #公众号:CryptoBox     加群主微信：进交流群"
     try:
         print("begin")
         check_login()
