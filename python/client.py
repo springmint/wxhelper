@@ -105,7 +105,7 @@ def hook_msg():
     """
     url = "http://127.0.0.1:19188/api/?type=9"
     payload = json.dumps({
-        "port": "19099",
+        "port": 19099,
         "ip": "127.0.0.1"
     })
     headers = {
