@@ -66,7 +66,14 @@ def on_error(wsapp, e):
 
 
 def on_open(wsapp):
-    wsapp.send("reg")
+    filename = "maxid.data"
+    maxid = 0
+    with open(filename, "r+") as ff:
+        s = ff.readline()
+        if str.strip(s) != "":
+            maxid = int(s)
+    print("reg,%d" % maxid)
+    wsapp.send("reg,%d" % maxid)
 # def in
 
 
