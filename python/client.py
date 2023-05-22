@@ -612,7 +612,7 @@ def send_cpbox_news(news_list):
                 send_text("48491358084@chatroom", send_contxt)
             elif el["type"] == 2:
                 if el["platform"] == "binance":
-                    send_contxt = "【类型】: 币安公告\n【内容】" + el["title"] + "\n" + "【链接】" + el["newsUrl"] + \
+                    send_contxt = "【类型】币安公告\n【内容】" + el["title"] + "\n" + "【链接】" + el["newsUrl"] + \
                         "\n" + "------------------------------------\n【发布时间】" + \
                         el["publishedAt"] + \
                         "\n" + slogan
