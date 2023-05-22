@@ -612,36 +612,36 @@ def send_cpbox_news(news_list):
                 send_text("48491358084@chatroom", send_contxt)
             elif el["type"] == 2:
                 if el["platform"] == "binance":
-                    send_contxt = "【类型】: 币安公告\n【内容】" + el["title"] + "\n" + "【链接】" + el["news_url"] + \
+                    send_contxt = "【类型】: 币安公告\n【内容】" + el["title"] + "\n" + "【链接】" + el["newsUrl"] + \
                         "\n" + "------------------------------------\n【发布时间】" + \
                         el["publishedAt"] + \
                         "\n" + slogan
                     send_text("38979139441@chatroom", send_contxt)  # 测试群
 
 
-def run_all_time():
-    while 1:
-        randoma = random.randint(300, 600)
-        time.sleep(randoma)
-        try:
-            print("begin")
-            check_login()
-        except requests.exceptions.ConnectionError:
-            print("something error!\n")
-        else:
-            rst_list = []
-            rst_list = get_news()
-        for el in rst_list:
-            send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
-                "\n" + "------------------------------------\n【发布时间】" + \
-                el["publishedAt"] + \
-                "\n【CryptoBox】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
-            # print(send_contxt)
-            send_text("38979139441@chatroom", send_contxt)
-            send_text("48491358084@chatroom", send_contxt)
+# def run_all_time():
+#     while 1:
+#         randoma = random.randint(300, 600)
+#         time.sleep(randoma)
+#         try:
+#             print("begin")
+#             check_login()
+#         except requests.exceptions.ConnectionError:
+#             print("something error!\n")
+#         else:
+#             rst_list = []
+#             rst_list = get_news()
+#         for el in rst_list:
+#             send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+#                 "\n" + "------------------------------------\n【发布时间】" + \
+#                 el["publishedAt"] + \
+#                 "\n【CryptoBox】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+#             # print(send_contxt)
+#             send_text("38979139441@chatroom", send_contxt)
+#             send_text("48491358084@chatroom", send_contxt)
 
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
     # hook_msg()
     # unhook_msg()
     # user_info()
