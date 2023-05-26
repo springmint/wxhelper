@@ -611,11 +611,23 @@ def send_cpbox_news(news_list):
                 send_text("38979139441@chatroom", send_contxt)  # 测试群
                 send_text("48491358084@chatroom", send_contxt)
             elif el["type"] == 2:
+                send_contxt = ""
                 if el["platform"] == "binance":
                     send_contxt = "【类型】币安公告\n【内容】" + el["title"] + "\n" + "【链接】" + el["newsUrl"] + \
                         "\n" + "------------------------------------\n【发布时间】" + \
                         el["publishedAt"] + \
                         "\n" + slogan
+                elif el["platform"] == "gate":
+                    send_contxt = "【类型】Gate公告\n【内容】" + el["title"] + "\n" + "【链接】" + el["newsUrl"] + \
+                        "\n" + "------------------------------------\n【发布时间】" + \
+                        el["publishedAt"] + \
+                        "\n" + slogan
+                elif el["platform"] == "okex":
+                    send_contxt = "【类型】OKEX公告\n【内容】" + el["title"] + "\n" + "【链接】" + el["newsUrl"] + \
+                        "\n" + "------------------------------------\n【发布时间】" + \
+                        el["publishedAt"] + \
+                        "\n" + slogan
+                if send_contxt != "":
                     send_text("38979139441@chatroom", send_contxt)  # 测试群
 
 
