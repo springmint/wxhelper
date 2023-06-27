@@ -629,6 +629,8 @@ def send_cpbox_news(news_list):
                         "\n" + slogan
                 if send_contxt != "":
                     send_text("38979139441@chatroom", send_contxt)  # 测试群
+            elif el["type"] == 4:
+                send_text("38979139441@chatroom", el["message"])  # 测试群
 
 
 # def run_all_time():
