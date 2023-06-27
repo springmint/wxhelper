@@ -164,7 +164,7 @@ def hook_voice():
     hook 语音
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=56"
+    url = "127.0.0.1:19088/api/?type=56"
     payload = json.dumps({
         "msgId": 322456091115784000
     })
@@ -180,7 +180,7 @@ def unhook_voice():
     取消hook 语音
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=14"
+    url = "127.0.0.1:19088/api/?type=14"
     payload = {}
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -192,7 +192,7 @@ def del_friend():
     删除好友
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=17"
+    url = "127.0.0.1:19088/api/?type=17"
     payload = json.dumps({
         "wxid": "wxid_1124423322"
     })
@@ -208,7 +208,7 @@ def search_friend():
     网络搜素用户
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=19"
+    url = "127.0.0.1:19088/api/?type=19"
     payload = json.dumps({
         "keyword": "13812345678"
     })
@@ -224,7 +224,7 @@ def add_friend():
     添加好友
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=20"
+    url = "127.0.0.1:19088/api/?type=20"
     payload = json.dumps({
         "wxid": "wxid_o11222334422"
     })
@@ -240,7 +240,7 @@ def fetch_chat_room_members():
     群成员
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=25"
+    url = "127.0.0.1:19088/api/?type=25"
     payload = json.dumps({
         "chatRoomId": "2112222004@chatroom"
     })
@@ -256,7 +256,7 @@ def get_member_nickname():
     群成员昵称
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=26"
+    url = "127.0.0.1:19088/api/?type=26"
     payload = json.dumps({
         "chatRoomId": "322333384@chatroom",
         "memberId": "wxid_4m1112222u22"
@@ -273,7 +273,7 @@ def del_member():
     删除群成员
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=27"
+    url = "127.0.0.1:19088/api/?type=27"
     payload = json.dumps({
         "chatRoomId": "31122263384@chatroom",
         "memberIds": "wxid_12223334422"
@@ -290,7 +290,7 @@ def add_member():
     增加群成员
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=28"
+    url = "127.0.0.1:19088/api/?type=28"
     payload = json.dumps({
         "chatRoomId": "1111163384@chatroom",
         "memberIds": "wxid_o12222222"
@@ -307,7 +307,7 @@ def modify_room_name():
     修改群昵称
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=31"
+    url = "127.0.0.1:19088/api/?type=31"
     payload = json.dumps({
         "chatRoomId": "222285428@chatroom",
         "wxid": "wxid_222222512",
@@ -325,7 +325,7 @@ def get_db_handlers():
     获取sqlite3的操作句柄
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=32"
+    url = "127.0.0.1:19088/api/?type=32"
     payload = {}
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -337,7 +337,7 @@ def query_db_by_sql():
     查询数据库
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=34"
+    url = "127.0.0.1:19088/api/?type=34"
     payload = json.dumps({
         "dbHandle": 116201928,
         "sql": "select localId from MSG where MsgSvrID= 7533111101686156"
@@ -354,7 +354,7 @@ def hook_log():
     hook 日志
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=36"
+    url = "127.0.0.1:19088/api/?type=36"
     payload = {}
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -366,7 +366,7 @@ def unhook_log():
     取消hook日志
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=37"
+    url = "127.0.0.1:19088/api/?type=37"
     payload = {}
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -380,8 +380,8 @@ def forward():
     """
     url = "http://127.0.0.1:19188/api/?type=40"
     payload = json.dumps({
-        "wxid": "filehelper",
-        "msgid": "705117679011122708"
+        "wxid": "lizhendong0819",
+        "msgid": 8201724198823985390
     })
     headers = {
         'Content-Type': 'application/json'
@@ -395,7 +395,7 @@ def logout():
     退出登录
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=44"
+    url = "127.0.0.1:19088/api/?type=44"
     payload = {}
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -407,7 +407,7 @@ def confirm_receipt():
     确认收款
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=45"
+    url = "127.0.0.1:19088/api/?type=45"
     payload = json.dumps({
         "wxid": "wxid_1111112622",
         "transcationId": "10000500012312222212243388865912",
@@ -429,7 +429,10 @@ def contact_list():
     payload = {}
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
-    print(response.text)
+    fo = open("foo.txt", "w", encoding="utf-8")
+    fo.write(response.text)
+    #print(response.text.decode('utf-8'))
+    fo.close()
 
 
 def room_detail():
@@ -437,7 +440,7 @@ def room_detail():
     群详情
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=47"
+    url = "127.0.0.1:19088/api/?type=47"
     payload = json.dumps({
         "chatRoomId": "199134446111@chatroom"
     })
@@ -453,7 +456,7 @@ def ocr():
     ocr提取文字
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=49"
+    url = "127.0.0.1:19088/api/?type=49"
     payload = json.dumps({
         "imagePath": "C:\\WeChat Files\\b23e84997144dd12f21554b0.dat"
     })
@@ -469,7 +472,7 @@ def pat():
     拍一拍
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=50"
+    url = "127.0.0.1:19088/api/?type=50"
     payload = json.dumps({
         "chatRoomId": "211111121004@chatroom",
         "wxid": "wxid_111111111422"
@@ -486,7 +489,7 @@ def top_msg():
     消息置顶
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=51"
+    url = "127.0.0.1:19088/api/?type=51"
     payload = json.dumps({
         "wxid": "wxid_o11114422",
         "msgid": 3728307145189195000
@@ -503,7 +506,7 @@ def close_top_msg():
     取消置顶
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=52"
+    url = "127.0.0.1:19088/api/?type=52"
     payload = json.dumps({
         "chatRoomId": "213222231004@chatroom",
         "msgid": 3728307145189195000
@@ -520,7 +523,7 @@ def sns_first():
     朋友圈首页
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=53"
+    url = "127.0.0.1:19088/api/?type=53"
     payload = {}
     headers = {}
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -532,7 +535,7 @@ def sns_next():
     朋友圈下一页
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=54"
+    url = "127.0.0.1:19088/api/?type=54"
     payload = json.dumps({
         "snsId": "14091988153735844377"
     })
@@ -548,7 +551,7 @@ def query_nickname():
     查询联系人或群名称
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=55"
+    url = "127.0.0.1:19088/api/?type=55"
 
     payload = json.dumps({
         "id": "wxid_1112p4422"
@@ -565,7 +568,7 @@ def download_msg_attach():
     下载消息附件
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=56"
+    url = "127.0.0.1:19088/api/?type=56"
     payload = json.dumps({
         "msgId": 6080100336053626000
     })
@@ -581,7 +584,7 @@ def get_member_info():
     获取群/群成员信息
     :return:
     """
-    url = "http://127.0.0.1:19188/api/?type=57"
+    url = "127.0.0.1:19088/api/?type=57"
     payload = json.dumps({
         "wxid": "wxid_tx8k6tu21112"
     })
@@ -601,6 +604,7 @@ def send_cpbox_news(news_list):
         print("something error!\n")
         # 记录在列表里面，相近的时间可以发送
     else:
+        print(news_list)
         for el in news_list:
             if el["type"] == 1:
                 send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
@@ -608,8 +612,15 @@ def send_cpbox_news(news_list):
                     el["publishedAt"] + \
                     "\n" + slogan
                 # print(send_contxt)
-                send_text("38979139441@chatroom", send_contxt)  # 测试群
-                send_text("48491358084@chatroom", send_contxt)
+                #send_text("38979139441@chatroom", send_contxt)  # 测试群
+                #send_text("48491358084@chatroom", send_contxt) # 快讯群1
+                # send_text("49079959371@chatroom", send_contxt) # 快讯群2
+                send_text("48374759999@chatroom", send_contxt) # 快讯群3
+                send_text("47589470249@chatroom", send_contxt) # 快讯群5
+                send_text("48104270290@chatroom", send_contxt) # 快讯群6
+                send_text("45541485078@chatroom", send_contxt) # 快讯群7
+                #send_text("43531302856@chatroom", send_contxt) # 快讯群8
+                
             elif el["type"] == 2:
                 send_contxt = ""
                 if el["platform"] == "binance":
@@ -629,33 +640,36 @@ def send_cpbox_news(news_list):
                         "\n" + slogan
                 if send_contxt != "":
                     send_text("38979139441@chatroom", send_contxt)  # 测试群
+                    send_text("43531302856@chatroom", send_contxt)  # 公告群
 
 
-# def run_all_time():
-#     while 1:
-#         randoma = random.randint(300, 600)
-#         time.sleep(randoma)
-#         try:
-#             print("begin")
-#             check_login()
-#         except requests.exceptions.ConnectionError:
-#             print("something error!\n")
-#         else:
-#             rst_list = []
-#             rst_list = get_news()
-#         for el in rst_list:
-#             send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
-#                 "\n" + "------------------------------------\n【发布时间】" + \
-#                 el["publishedAt"] + \
-#                 "\n【CryptoBox】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
-#             # print(send_contxt)
-#             send_text("38979139441@chatroom", send_contxt)
-#             send_text("48491358084@chatroom", send_contxt)
+#def run_all_time():
+#    while 1:
+#        randoma = random.randint(300, 600)
+#        time.sleep(randoma)
+#        try:
+#            print("begin")
+#            check_login()
+#        except requests.exceptions.ConnectionError:
+#            print("something error!\n")
+#        else:
+#            rst_list = []
+#            rst_list = get_news()
+#        for el in rst_list:
+#            send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+#                "\n" + "------------------------------------\n【发布时间】" + \
+#                el["publishedAt"] + \
+#                "\n【CryptoBox】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！\n#公众号:CryptoBox     官网：即将上线"
+#            # print(send_contxt)
+#            send_text("38979139441@chatroom", send_contxt)
+#            send_text("48491358084@chatroom", send_contxt)
 
 
 if __name__ == '__main__':
-    # hook_msg()
-    # unhook_msg()
+    #send_text("38979139441@chatroom", "测试開始hook1")
+    forward()
+    #hook_msg()
+    #unhook_msg()
     # user_info()
     # send_text()
     # run_all_time()
