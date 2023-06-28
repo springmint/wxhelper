@@ -31,6 +31,10 @@ class ReceiveMsgSocketServer(socketserver.BaseRequestHandler):
     @staticmethod
     def msg_callback(msg):
         print(msg)
+        if (msg["fromUser"]=='xxx'):
+            print(msg["fromUser"])
+            #sendmsg
+
 
 
 def start_socket_server(port: int = 19099,

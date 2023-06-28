@@ -591,6 +591,27 @@ def get_member_info():
     response = requests.request("POST", url, headers=headers, data=payload)
     print(response.text)
 
+def send_app_msg(wxid ,appname, username, title, murl, thumburl,digest):
+    """
+    发送公众号消息
+    :return:
+    """
+    url = "http://127.0.0.1:19188/api/?type=62"
+    payload = json.dumps({
+        "wxid": wxid,
+        "appname": appname,
+        "username": username,
+        "title": title,
+        "url": murl,
+        "thumburl": thumburl,
+        "digest": digest
+    })
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    response = requests.request("POST", url, headers=headers, data=payload)
+    print(response.text)
+
 
 def send_cpbox_news(news_list):
     slogan = "【Crypto Box】致力于成为最专业的Web3投研信息、实用工具、教程百科平台！获取所有功能，查看官网www.cpbox.io\n #公众号:CryptoBox     加群主微信：进交流群"
@@ -656,6 +677,7 @@ def send_cpbox_news(news_list):
 
 
 if __name__ == '__main__':
+        send_app_msg("lizhendong0819","chaincatcher", "", "Paradigm 联创：从未如此专注于加密货币，将继续在各个阶段进行投资；人工智能不容忽视，加密货币和 AI 有许多交叉点", "https://www.chaincatcher.com/article/2095590", "https://www.chaincatcher.com/_nuxt/img/logo.c1324be.png", "ChainCatcher 消息，Paradigm 联合创始人 Matt Huang 推特发文称，Paradigm 从未如此专注于加密货币。五年前，他们只是怀揣着对未来的好奇心和对加密货币的深信，开始了这个冒险。他们的最佳决策之一是创立了“研究合伙人”这个角色，并成功说服了丹·罗宾逊加入团队。如今，Paradigm 的团队仍秉持着深度研究驱动的方法，并将其作为核心价值体系。\n\n他表示，对加密货币从未如此兴奋过，Paradigm 将继续在各个阶段进行投资、发表原创研究、还积极推动投资组合公司开发机制（如Uniswap v2、v3、v4）、发布开源项目 (Foundry, Reth) 、以及倡导开明的政策等等。\n\n此外，他们对人工智能的发展也充满兴趣，其发展不容忽视，并认为加密货币和人工智能有许多交叉点。（来源链接）" )
     # hook_msg()
     # unhook_msg()
     # user_info()
