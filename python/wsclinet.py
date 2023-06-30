@@ -82,7 +82,7 @@ def on_ping(wsapp):
 
 
 def start_websocket_client():
-    # websocket.enableTrace(True)
+    websocket.enableTrace(True)
     ws = websocket.WebSocketApp(
         wsurl, on_message=on_message, on_close=on_close, on_error=on_error, on_open=on_open, on_ping=on_ping)
 
