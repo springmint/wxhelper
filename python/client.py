@@ -628,22 +628,23 @@ def send_cpbox_news(news_list):
         print(news_list)
         for el in news_list:
             if el["type"] == 1:
-                if el["subMessage"] == "chaincatcher精选": 
-                    send_app_msg("38979139441@chatroom",el["platform"], "", el["title"], el["newsUrl"], "https://www.chaincatcher.com/_nuxt/img/logo.c1324be.png", el["message"] )
-                else:
-                    send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
-                        "\n" + "------------------------------------\n【发布时间】" + \
-                        el["publishedAt"] + \
-                        "\n" + slogan
-                    # print(send_contxt)
-                    #send_text("38979139441@chatroom", send_contxt)  # 测试群
-                    #send_text("48491358084@chatroom", send_contxt) # 快讯群1
-                    # send_text("49079959371@chatroom", send_contxt) # 快讯群2
-                    send_text("48374759999@chatroom", send_contxt) # 快讯群3
-                    send_text("47589470249@chatroom", send_contxt) # 快讯群5
-                    send_text("48104270290@chatroom", send_contxt) # 快讯群6
-                    send_text("45541485078@chatroom", send_contxt) # 快讯群7
-                    #send_text("43531302856@chatroom", send_contxt) # 快讯群8
+                # if el["subMessage"] == "chaincatcher精选": 
+                #     # send_app_msg("38979139441@chatroom",el["platform"], "", el["title"], el["newsUrl"], "https://www.chaincatcher.com/_nuxt/img/logo.c1324be.png", el["message"] )
+                    
+                # else:
+                send_contxt = "【标题】" + el["title"] + "\n" + "【内容】" + el["message"] + \
+                    "\n" + "------------------------------------\n【发布时间】" + \
+                    el["publishedAt"] + \
+                    "\n" + slogan
+                # print(send_contxt)
+                #send_text("38979139441@chatroom", send_contxt)  # 测试群
+                #send_text("48491358084@chatroom", send_contxt) # 快讯群1
+                # send_text("49079959371@chatroom", send_contxt) # 快讯群2
+                send_text("48374759999@chatroom", send_contxt) # 快讯群3
+                send_text("47589470249@chatroom", send_contxt) # 快讯群5
+                send_text("48104270290@chatroom", send_contxt) # 快讯群6
+                send_text("45541485078@chatroom", send_contxt) # 快讯群7
+                #send_text("43531302856@chatroom", send_contxt) # 快讯群8
                     
             elif el["type"] == 2:
                 send_contxt = ""
@@ -664,6 +665,9 @@ def send_cpbox_news(news_list):
                         "\n" + slogan
                 if send_contxt != "":
                     send_text("38979139441@chatroom", send_contxt)  # 测试群
+            elif el["type"] == 3: 
+                if el["platform"] == "chaincatcher" and el["subMessage"] == "chaincatcher精选":
+                    send_app_msg("38979139441@chatroom",el["platform"], "", el["title"], el["newsUrl"], "https://www.chaincatcher.com/_nuxt/img/logo.c1324be.png", el["message"] )
             elif el["type"] == 4:
                 send_text("38979139441@chatroom", el["message"])  # 测试群
 
