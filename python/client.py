@@ -639,8 +639,8 @@ def send_cpbox_news(news_list):
                     #send_text("38979139441@chatroom", send_contxt)  # 测试群
                     #send_text("48491358084@chatroom", send_contxt) # 快讯群1
                     # send_text("49079959371@chatroom", send_contxt) # 快讯群2
-                    send_text("48374759999@chatroom", send_contxt) # 快讯群3
-                    send_text("47589470249@chatroom", send_contxt) # 快讯群5
+                    #send_text("48374759999@chatroom", send_contxt) # 快讯群3
+                    #send_text("47589470249@chatroom", send_contxt) # 快讯群5
                     send_text("48104270290@chatroom", send_contxt) # 快讯群6
                     send_text("45541485078@chatroom", send_contxt) # 快讯群7
                     #send_text("43531302856@chatroom", send_contxt) # 快讯群8
@@ -664,6 +664,7 @@ def send_cpbox_news(news_list):
                         "\n" + slogan
                 if send_contxt != "":
                     send_text("38979139441@chatroom", send_contxt)  # 测试群
+                    send_text("43531302856@chatroom", send_contxt)  # 公告群
             elif el["type"] == 4:
                 send_text("38979139441@chatroom", el["message"])  # 测试群
 
@@ -691,7 +692,8 @@ def send_cpbox_news(news_list):
 
 
 if __name__ == '__main__':
-        send_app_msg("lizhendong0819","chaincatcher", "", "Paradigm 联创：从未如此专注于加密货币，将继续在各个阶段进行投资；人工智能不容忽视，加密货币和 AI 有许多交叉点", "https://www.chaincatcher.com/article/2095590", "https://www.chaincatcher.com/_nuxt/img/logo.c1324be.png", "ChainCatcher 消息，Paradigm 联合创始人 Matt Huang 推特发文称，Paradigm 从未如此专注于加密货币。五年前，他们只是怀揣着对未来的好奇心和对加密货币的深信，开始了这个冒险。他们的最佳决策之一是创立了“研究合伙人”这个角色，并成功说服了丹·罗宾逊加入团队。如今，Paradigm 的团队仍秉持着深度研究驱动的方法，并将其作为核心价值体系。\n\n他表示，对加密货币从未如此兴奋过，Paradigm 将继续在各个阶段进行投资、发表原创研究、还积极推动投资组合公司开发机制（如Uniswap v2、v3、v4）、发布开源项目 (Foundry, Reth) 、以及倡导开明的政策等等。\n\n此外，他们对人工智能的发展也充满兴趣，其发展不容忽视，并认为加密货币和人工智能有许多交叉点。（来源链接）" )
+    send_app_msg("lizhendong0819","chaincatcher", "", "Paradigm 联创：从未如此专注于加密货币，将继续在各个阶段进行投资；人工智能不容忽视，加密货币和 AI 有许多交叉点", "https://www.chaincatcher.com/article/2095590", "https://www.chaincatcher.com/_nuxt/img/logo.c1324be.png", "ChainCatcher 消息，Paradigm 联合创始人 Matt Huang 推特发文称，Paradigm 从未如此专注于加密货币。五年前，他们只是怀揣着对未来的好奇心和对加密货币的深信，开始了这个冒险。他们的最佳决策之一是创立了“研究合伙人”这个角色，并成功说服了丹·罗宾逊加入团队。如今，Paradigm 的团队仍秉持着深度研究驱动的方法，并将其作为核心价值体系。\n\n他表示，对加密货币从未如此兴奋过，Paradigm 将继续在各个阶段进行投资、发表原创研究、还积极推动投资组合公司开发机制（如Uniswap v2、v3、v4）、发布开源项目 (Foundry, Reth) 、以及倡导开明的政策等等。\n\n此外，他们对人工智能的发展也充满兴趣，其发展不容忽视，并认为加密货币和人工智能有许多交叉点。（来源链接）" )
+    send_text("38979139441@chatroom", "测试開始hook1")
     # hook_msg()
     # unhook_msg()
     # user_info()
