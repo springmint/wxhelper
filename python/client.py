@@ -667,10 +667,18 @@ def send_cpbox_news(news_list):
                     send_text("38979139441@chatroom", send_contxt)  # 测试群
                     send_text("43531302856@chatroom", send_contxt)  # 公告群
             elif el["type"] == 3: 
+<<<<<<< HEAD
                 if el["platform"] == "chaincatcher" and el["subMessage"] == "chaincatcher精选":
                     send_app_msg("38979139441@chatroom",el["platform"], "", el["title"], el["newsUrl"], "https://www.chaincatcher.com/_nuxt/img/wx_icon.ca09afc.png", el["message"] )
                     send_app_msg("48894961207@chatroom",el["platform"], "", el["title"], el["newsUrl"], "https://www.chaincatcher.com/_nuxt/img/wx_icon.ca09afc.png", el["message"] )
 
+=======
+                if el["platform"] == "chaincatcher":
+                    cover = "https://www.chaincatcher.com/_nuxt/img/wx_icon.ca09afc.png"
+                    if el["subMessage"] == "chaincatcher精选article" and el["coverList"] != "" :
+                        cover = el["coverList"]
+                    send_app_msg("38979139441@chatroom",el["platform"], cover, el["title"], el["newsUrl"], "", el["message"] )
+>>>>>>> 87afb67d47024a1aaac21428ebb7386dcefd07ff
             elif el["type"] == 4:
                 send_text("38979139441@chatroom", el["message"])  # 测试群
 
