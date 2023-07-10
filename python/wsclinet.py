@@ -4,7 +4,7 @@ import os
 import time
 import threading
 from client import send_cpbox_news
-wsurl = "ws://sailor.kfcex.com/ws"
+wsurl = "wss://sailor.kfcex.com/ws"
 
 
 def send_message(txt):
